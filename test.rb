@@ -17,7 +17,7 @@ class Artist
       new_song_variable = Song.new
       new_song_variable.name = name_string
       if new_song_variable.artist == nil
-        new_song_variable.artist = self     # Why doesn't this line function properly? (See failure of "puts" on line 55.)
+        new_song_variable.artist = self
       end
     end
     def song_count
@@ -56,5 +56,5 @@ the_beatles = Artist.new("The Beatles")
 help = Song.new("Help!")
 puts "help.artist returns #{help.artist}"
 the_beatles.add_song(help)
-puts "the_beatles.songs returns #{the_beatles.songs}"
+puts "the_beatles.songs returns #{the_beatles.songs}" # Why does this return multiple instances of the song help? How did multiple instances even come to exist?
 puts "help.artist now returns #{help.artist}"
